@@ -1,14 +1,18 @@
-pub fn add(left: u64, right: u64) -> u64 {
-    left + right
+use std::time::Duration;
+use serialport;
+pub struct BlaustahlSRWP {
+    port: String,
 }
 
-#[cfg(test)]
-mod tests {
-    use super::*;
+impl BlaustahlSRWP {
+    pub fn new(port: String) -> BlaustahlSRWP {
 
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
+        let port = serialport::new("COM3", 115_200);
+
+        return BlaustahlSRWP { port: port }
+    }
+
+    pub fn connect(port: String) -> Result<(), String> {
+        Ok(())
     }
 }

@@ -1,6 +1,8 @@
-use blaustahl_srwp;
+use blaustahl_srwp::BlaustahlSRWP;
 
 #[test]
 fn test_integration() {
-    assert_eq!(0, 0);
+    
+    let blaustahlSRWP: BlaustahlSRWP = BlaustahlSRWP::new(String::from("COM3"));
+
 }
